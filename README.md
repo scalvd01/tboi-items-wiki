@@ -1,6 +1,6 @@
 # tboi-items-wiki
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ccadd491-e6b7-4ee4-8266-f1955d9f9251/deploy-status)](https://app.netlify.com/sites/paperclips-game/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b7331d6-d294-4a3b-80c5-dd66b8cb9dae/deploy-status)](https://app.netlify.com/sites/tboi-items-wiki/deploys)
 
 
 ## Recommended IDE Setup
