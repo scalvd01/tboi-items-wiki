@@ -1,0 +1,47 @@
+@layer base {
+  @font-face {
+    font-family: 'upheavtt';
+    src: url('../public/fonts/upheavtt.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'SilomBol';
+    src: url('../public/fonts/SilomBol.ttf') format('truetype');
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .pixelated {
+    image-rendering:pixelated;
+  }
+  img.lazyloaded {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+  }
+}
+
+* {
+  /* font-family: 'Montserrat', sans-serif; */
+  -webkit-font-smoothing: none;
+}
+.text_shadow{
+  text-shadow: #ae9988 1.5px 1.5px;
+}
+.text_shadow2{
+  text-shadow: #ad9e91 1px 1px;
+}
+
+.title-color{
+  color: #473a3c;
+}
+
+body {
+  /* background: #1e293b; */
+  color: #5c5349;
+  
+  
+}
+
