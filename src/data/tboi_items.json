@@ -10579,20 +10579,6 @@
         "Description": "Gives Isaac a Nerve Ending familiar that burrows out of the ground to grab and deal damage to enemies over time."
     },
     {
-        "Item_Name": "Tonsil",
-        "Item_ID": "5.100.474",
-        "Stripped_Item_Icon_Links": [
-            "https://static.wikia.nocookie.net/bindingofisaacre_gamepedia/images/8/8f/Trinket_Tonsil_icon.png"
-        ],
-        "Item_Icon_Links": [
-            "https://static.wikia.nocookie.net/bindingofisaacre_gamepedia/images/8/8f/Trinket_Tonsil_icon.png/revision/latest?cb=20210825081441"
-        ],
-        "Quote": "Gross...",
-        "Item_Type": "passive_item",
-        "Item_Quality": 0,
-        "Description": "Grants a familiar that follows Isaac and blocks enemy shots."
-    },
-    {
         "Item_Name": "???'s Soul",
         "Item_ID": "5.350.57",
         "Stripped_Item_Icon_Links": [

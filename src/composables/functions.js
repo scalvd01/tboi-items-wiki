@@ -28,7 +28,17 @@ export function useData() {
     }
   }
 
-  return { data, filteredList, getData, getItemByID, sortData }
+  const sortItemsByType = (type) => {
+    if (type == 'all') {
+      getData()
+    } else {
+      filteredList.value = data.filter((item) => {
+        return item.Item_Type == type
+      })
+    }
+  }
+
+  return { data, filteredList, getData, getItemByID, sortData, sortItemsByType }
 }
 
 // export const functions = () => {

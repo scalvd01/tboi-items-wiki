@@ -31,7 +31,7 @@ const props = defineProps(['itemImage', 'itemName', 'itemType'])
       <img
         v-if="itemType == 'activated_item' || itemType == 'passive_item'"
         class="h-10 pixelated lazyloaded brightness-110 contrast-125 saturate-100"
-        src="src/assets/images/pedestal.webp"
+        src="/src/assets/images/pedestal.webp"
         alt="Item Pedestal"
       />
 

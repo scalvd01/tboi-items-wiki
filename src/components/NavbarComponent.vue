@@ -3,6 +3,8 @@
 import { onMounted, ref } from 'vue'
 import { initFlowbite } from 'flowbite'
 import SearchBoxComponent from '../components/SearchBoxComponent.vue'
+import { useData } from '../composables/functions.js'
+const { sortItemsByType } = useData()
 
 onMounted(() => {
   initFlowbite()
@@ -16,27 +18,30 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav >
+  <nav>
     <div
-      class="flex flex-wrap items-center justify-evenly fixed w-full z-20 top-0  p-4 borderCard pixelated border-8 border-x-4 border-b-4"
+      class="flex flex-wrap items-center justify-evenly fixed w-full z-20 top-0 p-4 borderCard pixelated border-8 border-x-4 border-b-4"
     >
       <a href="/" class="flex items-center">
-        <img src="@/assets/images/Isaac_icon.webp" class="h-12 mr-2  pixelated" alt="Logo" />
+        <img src="@/assets/images/Isaac_icon.webp" class="h-12 mr-2 pixelated" alt="Logo" />
         <span
           class="sm:hidden self-center text-3xl font-semibold font-upheavtt tracking-wider leading-none text_shadow title-color"
-          >TBOI Items<br> Wiki</span
+          >TBOI Items<br />
+          Wiki</span
         >
 
         <span
           class="hidden sm:block md:hidden self-center text-4xl font-semibold font-upheavtt tracking-wider text_shadow title-color"
-          >The Binding Of Isaac<br> Items Wiki</span
+          >The Binding Of Isaac<br />
+          Items Wiki</span
         >
         <span
           class="hidden md:block lg:hidden self-center text-4xl font-semibold font-upheavtt tracking-wider text_shadow title-color"
-          >The Binding Of Isaac<br> Items Wiki</span
+          >The Binding Of Isaac<br />
+          Items Wiki</span
         >
         <span
-          class="hidden  lg:block self-center text-4xl font-semibold font-upheavtt tracking-wider text_shadow title-color"
+          class="hidden lg:block self-center text-4xl font-semibold font-upheavtt tracking-wider text_shadow title-color"
           >The Binding Of Isaac Items Wiki</span
         >
       </a>
@@ -89,6 +94,132 @@ onMounted(() => {
           <SearchBoxComponent />
         </div>
       </div>
+
+      <!-- filter dropdown button -->
+      <button
+        id="dropdownDefaultButton"
+        data-dropdown-toggle="dropdown"
+        class="hover:bg-[#ae9988] focus:outline-none rounded-lg text-sm p-2.5 mr-1"
+        type="button"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-adjustments-horizontal"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M14 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+          <path d="M4 6l8 0"></path>
+          <path d="M16 6l4 0"></path>
+          <path d="M8 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+          <path d="M4 12l2 0"></path>
+          <path d="M10 12l10 0"></path>
+          <path d="M17 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+          <path d="M4 18l11 0"></path>
+          <path d="M19 18l1 0"></path>
+        </svg>
+      </button>
+
+      <!-- Dropdown menu -->
+      <div
+        id="dropdown"
+        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+      >
+        <ul
+          class="py-2 text-sm text-gray-700 dark:text-gray-200 divide-y divide-[#caaca4]/80"
+          aria-labelledby="dropdownDefaultButton"
+        >
+          <li>
+            <button
+              @click="sortItemsByType('all')"
+              class="block px-4 py-2 hover:bg-[#ae9988] focus:outline-none w-full font-SilomBol text_shadow2"
+              type="button"
+            >
+              All items
+            </button>
+          </li>
+          <li>
+            <button
+              @click="sortItemsByType('activated_item')"
+              class="block px-4 py-2 hover:bg-[#ae9988] focus:outline-none w-full font-SilomBol text_shadow2"
+              type="button"
+            >
+              Activated Item
+            </button>
+          </li>
+          <li>
+            <button
+              @click="sortItemsByType('passive_item')"
+              class="block px-4 py-2 hover:bg-[#ae9988] focus:outline-none w-full font-SilomBol text_shadow2"
+              type="button"
+            >
+              Passive Item
+            </button>
+          </li>
+          <li>
+            <button
+              @click="sortItemsByType('trinket')"
+              class="block px-4 py-2 hover:bg-[#ae9988] focus:outline-none w-full font-SilomBol text_shadow2"
+              type="button"
+            >
+              Trinkets
+            </button>
+          </li>
+          <li>
+            <button
+              @click="sortItemsByType('heart')"
+              class="block px-4 py-2 hover:bg-[#ae9988] focus:outline-none w-full font-SilomBol text_shadow2"
+              type="button"
+            >
+              Hearts
+            </button>
+          </li>
+          <li>
+            <button
+              @click="sortItemsByType('coin')"
+              class="block px-4 py-2 hover:bg-[#ae9988] focus:outline-none w-full font-SilomBol text_shadow2"
+              type="button"
+            >
+              Coins
+            </button>
+          </li>
+          <li>
+            <button
+              @click="sortItemsByType('bomb')"
+              class="block px-4 py-2 hover:bg-[#ae9988] focus:outline-none w-full font-SilomBol text_shadow2"
+              type="button"
+            >
+              Bombs
+            </button>
+          </li>
+          <li>
+            <button
+              @click="sortItemsByType('key')"
+              class="block px-4 py-2 hover:bg-[#ae9988] focus:outline-none w-full font-SilomBol text_shadow2"
+              type="button"
+            >
+              Keys
+            </button>
+          </li>
+          <li>
+            <button
+              @click="sortItemsByType('batteries')"
+              class="block px-4 py-2 hover:bg-[#ae9988] focus:outline-none w-full font-SilomBol text_shadow2"
+              type="button"
+            >
+              Batteries
+            </button>
+          </li>
+        </ul>
+      </div>
+
       <div
         class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
         id="navbar-search"
