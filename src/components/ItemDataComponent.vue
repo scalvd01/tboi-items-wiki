@@ -11,7 +11,7 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
     class="flex flex-col justify-center itemInfoBg pixelated border-8 bg-[#eee2d1] m-3 mx-1 relative"
   >
   <!-- <router-link to="/" class="absolute -top-6 -right-4 "><img src="src/assets/images/button_back.webp" alt=""></router-link> -->
-  <router-link to="/" class="absolute -bottom-6 -right-4 "><img src="src/assets/images/button_back.webp" alt=""></router-link>
+  <router-link to="/" class="absolute -bottom-6 -right-4 "><img src="/src/assets/images/button_back.webp" alt=""></router-link>
   
     <!-- title -->
     <div class="flex flex-col items-center mb-4 mt-2">
@@ -27,7 +27,7 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
         <!-- item image -->
         <img
           class="flex justify-center h-20 pixelated lazyloaded"
-          :src="`src/assets/images/item_icon_images/${props.itemData.Item_ID}.webp`"
+          :src="`/src/assets/images/item_icon_images/${props.itemData.Item_ID}.webp`"
           alt=""
         />
         <!-- pedestal icon -->
@@ -40,7 +40,7 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
         >
           <img
             class="h-10 pixelated lazyloaded brightness-110 contrast-125 saturate-100"
-            src="src/assets/images/pedestal.webp"
+            src="/src/assets/images/pedestal.webp"
             alt="Item Pedestal"
           />
         </div>
@@ -50,13 +50,13 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
         <img
           v-if="props.itemData.Item_Recharge_Time != 'Recharge_variable'"
           class="h-20 pixelated lazyloaded"
-          :src="`src/assets/images/item_icon_images/${props.itemData.Item_Recharge_Time}.webp`"
+          :src="`/src/assets/images/item_icon_images/${props.itemData.Item_Recharge_Time}.webp`"
           alt=""
         />
         <img
           v-else
           class="h-20 pixelated lazyloaded"
-          :src="`src/assets/images/item_icon_images/${props.itemData.Item_Recharge_Time}.gif`"
+          :src="`/src/assets/images/item_icon_images/${props.itemData.Item_Recharge_Time}.gif`"
           alt=""
         />
       </div>
@@ -97,14 +97,14 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
           <img
             v-for="index in props.itemData.Item_Quality"
             :key="index"
-            src="src/assets/images/Item_quality_full.webp"
+            src="/src/assets/images/Item_quality_full.webp"
             alt="Item_quality_full"
             class="pixelated lazyloaded"
           />
           <img
             v-for="index in empty_stars"
             :key="index"
-            src="src/assets/images/Item_quality_empty.webp"
+            src="/src/assets/images/Item_quality_empty.webp"
             alt="Item_quality_full"
             class="pixelated lazyloaded"
           />
@@ -117,7 +117,7 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
           <img
             v-for="(item, index) in props.itemData.Worth"
             :key="index"
-            :src="`src/assets/images/item_icon_images/${item}.webp`"
+            :src="`/src/assets/images/item_icon_images/${item}.webp`"
             alt="Item_quality_full"
             class="pixelated lazyloaded"
           />
