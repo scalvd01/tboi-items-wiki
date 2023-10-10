@@ -1,6 +1,7 @@
 # tboi-items-wiki
 
-This template should help get you started developing with Vue 3 in Vite.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b7331d6-d294-4a3b-80c5-dd66b8cb9dae/deploy-status)](https://app.netlify.com/sites/tboi-items-wiki/deploys)
+
 
 ## Recommended IDE Setup
 
