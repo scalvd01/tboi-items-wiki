@@ -14,7 +14,7 @@ const route = useRoute()
 
 const itemData = getItemByID(route.params.id)
 
-const favicon = computed(() => `src/assets/images/item_icon_images/${itemData.Item_ID}.webp`)
+const favicon = computed(() => `/src/assets/images/item_icon_images/${itemData.Item_ID}.webp`)
 useFavicon(favicon)
 
 const title = computed(() => `TBOI Items Wiki | ${itemData.Item_Name}`)

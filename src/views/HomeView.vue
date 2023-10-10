@@ -23,7 +23,7 @@ const itemList = filteredList
     >
       <div v-for="item in itemList" :key="item.Item_ID">
         <router-link :to="`/item/${item.Item_ID}`">
-          <ItemCardComponent :itemImage="`assets/images/item_icon_images/${item.Item_ID}.webp`" :itemName="item.Item_Name" :itemType="item.Item_Type"
+          <ItemCardComponent :itemImage="`/assets/images/item_icon_images/${item.Item_ID}.webp`" :itemName="item.Item_Name" :itemType="item.Item_Type"
         /></router-link>
       </div></main
   ></BackgroundComponent>
