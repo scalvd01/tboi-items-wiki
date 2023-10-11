@@ -8,11 +8,13 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
 
 <template>
   <div
-    class="flex flex-col justify-center itemInfoBg pixelated border-8 bg-[#eee2d1] m-3 mx-1 relative"
+    class="flex flex-col justify-center itemInfoBg pixelated border-8 bg-[#eee2d1] m-3 mx-1 relative "
   >
-  <!-- <router-link to="/" class="absolute -top-6 -right-4 "><img src="src/assets/images/button_back.webp" alt=""></router-link> -->
-  <router-link to="/" class="absolute -bottom-6 -right-4 "><img src="/src/assets/images/button_back.webp" alt=""></router-link>
-  
+    <!-- <router-link to="/" class="absolute -top-6 -right-4 "><img src="src/assets/images/button_back.webp" alt=""></router-link> -->
+    <router-link to="/" class="absolute -bottom-6 -right-4"
+      ><img src="/src/assets/images/button_back.webp" alt=""
+    /></router-link>
+
     <!-- title -->
     <div class="flex flex-col items-center mb-4 mt-2">
       <h1
@@ -25,11 +27,12 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
     <div class="flex justify-center mb-4">
       <div class="flex flex-col">
         <!-- item image -->
+        <div class="shake-vertical">
         <img
-          class="flex justify-center h-20 pixelated lazyloaded"
+          class="flex justify-center h-20 pixelated lazyloaded jello-horizontal "
           :src="`/src/assets/images/item_icon_images/${props.itemData.Item_ID}.webp`"
           alt=""
-        />
+        /></div>
         <!-- pedestal icon -->
         <div
           v-if="
