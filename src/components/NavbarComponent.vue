@@ -25,7 +25,7 @@ onMounted(() => {
       <a href="/" class="flex items-center">
         <img src="@/assets/images/Isaac_icon.webp" class="h-12 mr-2 pixelated" alt="Logo" />
         <span
-          class="sm:hidden self-center text-1xl font-semibold font-upheavtt tracking-wider leading-none text_shadow title-color"
+          class="sm:hidden self-center text-xl font-semibold font-upheavtt tracking-wider leading-none text_shadow title-color"
           >TBOI Items<br />
           Wiki</span
         >
