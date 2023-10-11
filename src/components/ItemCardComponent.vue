@@ -64,7 +64,7 @@ const props = defineProps(['itemImage', 'itemName', 'itemType'])
   box-sizing: content-box;
   border: 30px solid;
   background-clip: content-box;
-  border-image: url('src/assets/images/backgrounds/CSS_Border_Infobox.webp') 30 fill round;
+  border-image: url('@/assets/images/backgrounds/CSS_Border_Infobox.webp') 30 fill round;
   text-align: center;
   z-index: 1;
 }
