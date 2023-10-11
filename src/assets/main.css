@@ -19,7 +19,7 @@
   }
   img.lazyloaded {
     opacity: 1;
-    transition: opacity 0.3s ease-out;
+    /* transition: opacity 0.3s ease-out; */
   }
 }
 

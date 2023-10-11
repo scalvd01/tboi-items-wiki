@@ -1,5 +1,8 @@
 <script setup>
 import { computed } from 'vue'
+import { useData } from '../composables/functions.js'
+
+const { getImageSrc } = useData()
 
 const props = defineProps(['itemData'])
 
@@ -8,7 +11,7 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
 
 <template>
   <div
-    class="flex flex-col justify-center itemInfoBg pixelated border-8 bg-[#eee2d1] m-3 mx-1 relative "
+    class="flex flex-col justify-center itemInfoBg pixelated border-8 bg-[#eee2d1] m-3 mx-1 relative"
   >
     <!-- <router-link to="/" class="absolute -top-6 -right-4 "><img src="src/assets/images/button_back.webp" alt=""></router-link> -->
     <router-link to="/" class="absolute -bottom-6 -right-4"
@@ -28,11 +31,12 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
       <div class="flex flex-col">
         <!-- item image -->
         <div class="shake-vertical">
-        <img
-          class="flex justify-center h-20 pixelated lazyloaded jello-horizontal "
-          :src="`/src/assets/images/item_icon_images/${props.itemData.Item_ID}.webp`"
-          alt=""
-        /></div>
+          <img
+            class="flex justify-center h-20 pixelated lazyloaded jello-horizontal"
+            :src="getImageSrc(props.itemData.Item_ID)"
+            alt=""
+          />
+        </div>
         <!-- pedestal icon -->
         <div
           v-if="
@@ -50,16 +54,16 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
       </div>
       <!-- recharge icon -->
       <div v-if="props.itemData.Item_Type" class="col-start-2 row-start-1">
-        <img
-          v-if="props.itemData.Item_Recharge_Time != 'Recharge_variable'"
+       
+        <img v-if="props.itemData.Item_Recharge_Time != 'Recharge_variable'"
           class="h-20 pixelated lazyloaded"
-          :src="`/src/assets/images/item_icon_images/${props.itemData.Item_Recharge_Time}.webp`"
+          :src="getImageSrc(props.itemData.Item_Recharge_Time)"
           alt=""
         />
         <img
           v-else
           class="h-20 pixelated lazyloaded"
-          :src="`/src/assets/images/item_icon_images/${props.itemData.Item_Recharge_Time}.gif`"
+          :src="getImageSrc(props.itemData.Item_Recharge_Time,'gif')"
           alt=""
         />
       </div>
@@ -122,7 +126,7 @@ const empty_stars = computed(() => 4 - props.itemData.Item_Quality)
             :key="index"
             :src="`/src/assets/images/item_icon_images/${item}.webp`"
             alt="Item_quality_full"
-            class="pixelated lazyloaded"
+            class="pixelated lazyloaded w-10"
           />
         </div>
         <h1 v-if="props.itemData.Item_Type == 'coin'" class="font-SilomBol">

@@ -15,7 +15,7 @@ const props = defineProps(['itemImage', 'itemName', 'itemType'])
         "
         :src="props.itemImage"
         :alt="props.itemName + ' Icon'"
-        class="h-10 pixelated lazyloaded my-4"
+        class="h-10 pixelated lazyloaded my-4 transition ease-in-out hover:-translate-y-4 hover:scale-125 duration-200"
         loading="lazy"
         title="Item icon"
       />
@@ -23,7 +23,7 @@ const props = defineProps(['itemImage', 'itemName', 'itemType'])
         v-else
         :src="props.itemImage"
         :alt="props.itemName + ' Icon'"
-        class="h-20 pixelated lazyloaded"
+        class="h-20 pixelated lazyloaded transition ease-in-out hover:-translate-y-4 hover:scale-125 duration-200"
         loading="lazy"
         title="Item icon"
       />

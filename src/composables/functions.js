@@ -38,7 +38,17 @@ export function useData() {
     }
   }
 
-  return { data, filteredList, getData, getItemByID, sortData, sortItemsByType }
+  const getImageSrc = (id, fileExtension='webp') => {
+    try {
+      const imageUrl = new URL(`/src/assets/images/item_icon_images/${id}.${fileExtension}`, import.meta.url)
+        .href
+      return imageUrl
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  return { data, filteredList, getData, getItemByID, sortData, sortItemsByType, getImageSrc }
 }
 
 // export const functions = () => {
