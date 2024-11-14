@@ -1,13 +1,18 @@
 <!-- eslint-disable no-unused-vars -->
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { initFlowbite } from 'flowbite'
 import SearchBoxComponent from '../components/SearchBoxComponent.vue'
 import { useData } from '../composables/functions.js'
+import { useRoute } from 'vue-router'
 const { sortItemsByType } = useData()
 
 onMounted(() => {
   initFlowbite()
+})
+
+const mostrarBusquedaYFiltros = computed(() => {
+  return useRoute().path === '/'
 })
 
 // const focus = ref(false)
@@ -45,7 +50,8 @@ onMounted(() => {
           >The Binding Of Isaac Items Wiki</span
         >
       </a>
-      <div class="flex md:order-2">
+
+      <div class="flex md:order-2" :class="{ hidden: !mostrarBusquedaYFiltros }">
         <!-- boton despliegue de búsqueda en movil -->
         <button
           type="button"
@@ -100,6 +106,7 @@ onMounted(() => {
         id="dropdownDefaultButton"
         data-dropdown-toggle="dropdown"
         class="hover:bg-[#ae9988] focus:outline-none rounded-lg text-sm p-2.5 mr-1"
+        :class="{ hidden: !mostrarBusquedaYFiltros }"
         type="button"
       >
         <svg
@@ -131,6 +138,7 @@ onMounted(() => {
       <div
         id="dropdown"
         class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+        :class="{ hidden: !mostrarBusquedaYFiltros }"
       >
         <ul
           class="py-2 text-sm text-gray-700 dark:text-gray-200 divide-y divide-[#caaca4]/80"
@@ -222,6 +230,7 @@ onMounted(() => {
 
       <div
         class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+        :class="{ hidden: !mostrarBusquedaYFiltros }"
         id="navbar-search"
       >
         <div class="relative mt-3 md:hidden">

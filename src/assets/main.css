@@ -23,6 +23,34 @@
   }
 }
 
+
+body {
+	background-image: url("@/assets/images/backgrounds/edge_left.webp"),
+		url("@/assets/images/backgrounds/edge_right.webp"),
+		url('@/assets/images/backgrounds/bg.gif');
+	background-repeat: repeat-y, repeat-y, repeat;
+	background-position:
+		left top,
+		right top,
+		left top;
+	background-attachment: scroll, scroll, scroll;
+
+	image-rendering: pixelated;
+
+	-webkit-font-smoothing: none;
+
+	color: #5c5349;
+}
+
+@media (max-width: 640px) {
+	body {
+		background-size:
+			20% auto,
+			20% auto,
+			auto;
+	}
+}
+
 * {
   /* font-family: 'Montserrat', sans-serif; */
   -webkit-font-smoothing: none;
