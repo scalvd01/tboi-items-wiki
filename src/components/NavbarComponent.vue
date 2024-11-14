@@ -14,12 +14,6 @@ onMounted(() => {
 const mostrarBusquedaYFiltros = computed(() => {
   return useRoute().path === '/'
 })
-
-// const focus = ref(false)
-// const focusInput = () => {
-//   console.log('focuseado')
-//   document.getElementById('search-input-sm').focus()
-// }
 </script>
 
 <template>
